@@ -1,4 +1,5 @@
-# ESRGAN
+# G_ESRGAN
+
 Both image and video capable ESRGAN model 
 
 🚀 _**Usage of GAN model**_:
