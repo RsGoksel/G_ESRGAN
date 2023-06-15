@@ -7,6 +7,9 @@ import cv2
 import numpy as np
 import argparse 
 import re
+import logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--image-path', type=str, default=" ", help='path of Image.. :)')
@@ -60,3 +63,4 @@ img_L = img_L.to(device)
 img_E = model(img_L)
 img_E = tensor2uint(img_E)
 cv2.imwrite(output_name, img_E)
+logging.info('\nOutput is on outputs folder. \nModel çıktısı, outputs klasöründe.')
