@@ -3,7 +3,9 @@
 
 Both image and video capable ESRGAN model 
 
-**Weights can be found in release**
+**Weights can be found in release** After downloading it, put it in the weights folder.
+
+
 
 
 
