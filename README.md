@@ -5,6 +5,7 @@ Both image and video capable ESRGAN model
 
 **Weights can be found in release** After downloading it, put it in the weights folder.
 
+Colab Page: [![Colab](https://img.shields.io/static/v1?label=Demo&message=Colab&color=orange)](https://drive.google.com/file/d/1HVMSJoFMNugZMZ5mX51mraH7yf8rWPCv/view?usp=sharing)
 
 
 
