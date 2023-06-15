@@ -1,7 +1,14 @@
 # G_ESRGAN
 
+
 Both image and video capable ESRGAN model 
-<br>
+
+**Weights can be found in release**
+
+
+
+
+
 🚀 _**Usage of GAN model**_:
 ___________________________________
 
@@ -17,11 +24,11 @@ For the _**Videos**_, (Just mp4)
     python Video_GAN.py --video-path example.mp4
 ```
 
+* Resuls will be in output folder after the processing
 
-! __*Video results might be slow about 360p and above*__ !
+* Video results might be slow about 360p and above
 
-**Weights can be found in release **
-<br>
+_______________________________________________________________
 🚀 Here are some results images and videos 
 _______________________________________________________________
 
@@ -42,4 +49,5 @@ _____________________________________________
 ![Lord2](https://github.com/RsGoksel/G_ESRGAN/assets/80707238/8be3898e-4f27-4ce9-bc59-dcd72daae690)
 ________________________________
 
+You can contact me for any suggestions -> gunduz.gokssel@gmail.com
 
