@@ -27,7 +27,7 @@ For the _**Videos**_, (Just mp4)
     python Video_GAN.py --video-path example.mp4
 ```
 
-* Resuls will be in output folder after the processing
+* Results will be in output folder after the processing
 
 * Video results might be slow about 360p and above
 
@@ -38,7 +38,7 @@ _______________________________________________________________
 https://github.com/RsGoksel/G_ESRGAN/assets/80707238/7025522f-228c-4bcd-8f11-62b3c68611e1
 ___________________________________________________________________________
 
-Because of this GAN models training dataset, inference results will be better which involes anime images or sort of artifical images like CGI. 
+Because of this GAN models training dataset, inference results will be better which involes anime images or sort of artifical images like CGI mostly. 
 
 
 _Other general GAN models will coming soon__ 👌 
