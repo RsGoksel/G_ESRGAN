@@ -38,12 +38,7 @@ _______________________________________________________________
 https://github.com/RsGoksel/G_ESRGAN/assets/80707238/7025522f-228c-4bcd-8f11-62b3c68611e1
 ___________________________________________________________________________
 
-Because of this GAN models training dataset, inference results will be better which involes anime images or sort of artifical images like CGI mostly. 
-
-
-_Other general GAN models will coming soon__ 👌 
-
-
+As a result of the GAN models' training dataset, inference results tend to perform better, particularly when dealing with images that include anime or other forms of artificial imagery, like CGI.
 
 ![Yugi](https://github.com/RsGoksel/G_ESRGAN/assets/80707238/b3c9bbb3-580d-4a80-93fb-581d8bd3b1b3)
 _______________________________________________________________
@@ -52,5 +47,4 @@ _____________________________________________
 ![Lord2](https://github.com/RsGoksel/G_ESRGAN/assets/80707238/8be3898e-4f27-4ce9-bc59-dcd72daae690)
 ________________________________
 
-You can contact me for any suggestions -> gunduz.gokssel@gmail.com
 
