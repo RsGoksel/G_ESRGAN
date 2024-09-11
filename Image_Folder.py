@@ -1,16 +1,17 @@
 import os
-import shutil
 import logging
 import torch
 from rrdbnet import RRDBNet as net
 import cv2
 import numpy as np
-from google.colab import files
+import argparse
 
-# Set up logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-# Define image processing functions
+parser = argparse.ArgumentParser()
+parser.add_argument('--folder-path', type=str, default=" ", help='path to the folder containing images')
+args = parser.parse_args()
+
 def imread_uint(path, n_channels=3):
     if n_channels == 1:
         img = np.expand_dims(img, axis=2)  
@@ -33,7 +34,6 @@ def tensor2uint(img):
         img = np.transpose(img, (1, 2, 0))
     return np.uint8((img*255.0).round())
 
-# Set up the device and model
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 torch.cuda.empty_cache()
 
@@ -47,12 +47,12 @@ model = model.to(device)
 torch.cuda.empty_cache()
 
 # Ensure output folder exists
-output_folder = "/content/G_ESRGAN/outputs"
+output_folder = "outputs"
 os.makedirs(output_folder, exist_ok=True)
 
-# Process each uploaded image in the target folder
-for filename in os.listdir(target_path):
-    image_path = os.path.join(target_path, filename)
+# Iterate over all files in the folder
+for filename in os.listdir(args.folder_path):
+    image_path = os.path.join(args.folder_path, filename)
     
     if os.path.isfile(image_path):
         image = cv2.imread(image_path)
