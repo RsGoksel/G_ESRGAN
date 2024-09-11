@@ -1,17 +1,31 @@
 import os
+import shutil
 import logging
 import torch
 from rrdbnet import RRDBNet as net
 import cv2
 import numpy as np
-import argparse
+from google.colab import files
 
+# Set up logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-parser = argparse.ArgumentParser()
-parser.add_argument('--folder-path', type=str, default=" ", help='path to the folder containing images')
-args = parser.parse_args()
+# Define the target directory for uploaded files
+target_path = '/content/G_ESRGAN/inputs'
+os.makedirs(target_path, exist_ok=True)
 
+# Upload files through Colab's file upload interface
+uploaded_files = files.upload()
+
+# Move the uploaded files to the target directory
+for file_name in uploaded_files.keys():
+    source_path = file_name  # Uploaded file is in the current working directory
+    dest_path = os.path.join(target_path, file_name)  # Destination path for the file
+    shutil.move(source_path, dest_path)  # Move the file to the target directory
+
+print(f"All images have been moved to {target_path}")
+
+# Define image processing functions
 def imread_uint(path, n_channels=3):
     if n_channels == 1:
         img = np.expand_dims(img, axis=2)  
@@ -34,6 +48,7 @@ def tensor2uint(img):
         img = np.transpose(img, (1, 2, 0))
     return np.uint8((img*255.0).round())
 
+# Set up the device and model
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 torch.cuda.empty_cache()
 
@@ -47,12 +62,12 @@ model = model.to(device)
 torch.cuda.empty_cache()
 
 # Ensure output folder exists
-output_folder = "outputs"
+output_folder = "/content/G_ESRGAN/outputs"
 os.makedirs(output_folder, exist_ok=True)
 
-# Iterate over all files in the folder
-for filename in os.listdir(args.folder_path):
-    image_path = os.path.join(args.folder_path, filename)
+# Process each uploaded image in the target folder
+for filename in os.listdir(target_path):
+    image_path = os.path.join(target_path, filename)
     
     if os.path.isfile(image_path):
         image = cv2.imread(image_path)
