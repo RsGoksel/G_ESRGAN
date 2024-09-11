@@ -10,21 +10,6 @@ from google.colab import files
 # Set up logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-# Define the target directory for uploaded files
-target_path = '/content/G_ESRGAN/inputs'
-os.makedirs(target_path, exist_ok=True)
-
-# Upload files through Colab's file upload interface
-uploaded_files = files.upload()
-
-# Move the uploaded files to the target directory
-for file_name in uploaded_files.keys():
-    source_path = file_name  # Uploaded file is in the current working directory
-    dest_path = os.path.join(target_path, file_name)  # Destination path for the file
-    shutil.move(source_path, dest_path)  # Move the file to the target directory
-
-print(f"All images have been moved to {target_path}")
-
 # Define image processing functions
 def imread_uint(path, n_channels=3):
     if n_channels == 1:
